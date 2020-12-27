@@ -2,11 +2,11 @@
 h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Our Games
 p.mt-8.text-xl.leading-8
   | Games we have played, corrently play, or plan on playing
-.mt-6.grid.grid-cols-2(class="gap-0.5 md:grid-cols-3 lg:mt-8")
-  .col-span-1.flex.justify-center.py-8.px-8.bg-gray-800(
-    v-for="row in games"
-  )
-    img.object-contain(:src="row.image" :alt="row.label")
+.mx-auto.py-12.px-4.max-w-7xl(class='sm:px-6 lg:px-8 lg:py-24')
+  ul.space-y-12(class='sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:gap-x-8')
+    li.shadow-lg.rounded-lg.bg-gray-800(v-for="row in games")
+      .aspect-w-2.aspect-h-1.m-4
+        img.object-contain(:src="row.image" :alt="row.label")
 </template>
 
 <script lang="ts">
