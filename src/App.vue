@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.mx-auto.h-screen.bg-gray-900.font-mono.text-gray-50
+.container.mx-auto.h-screen.bg-gray-900.font-mono.text-gray-200
   TopNav
   router-view
 </template>

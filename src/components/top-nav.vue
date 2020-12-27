@@ -37,9 +37,9 @@ export default defineComponent({
       isOpen: false,
       links: [
         { label: 'About Us', link: '/' },
-        { label: 'Recruitment', link: '/recruitment' },
         { label: 'Rank Structure', link: '/rank-structure' },
-        { label: 'Games', link: '/games' }
+        { label: 'Games', link: '/games' },
+        { label: 'Recruitment', link: '/recruitment' }
       ]
     };
   },

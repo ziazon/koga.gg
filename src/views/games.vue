@@ -1,12 +1,12 @@
 <template lang="pug">
-.max-w-7xl.mx-auto.py-12.px-4(class="sm:px-6 lg:py-16 lg:px-8")
-  p.text-center.text-base.font-semibold.uppercase.text-gray-600.tracking-wider
-    | Games we have played, corrently play, or plan on playing
-  .mt-6.grid.grid-cols-2(class="gap-0.5 md:grid-cols-3 lg:mt-8")
-    .col-span-1.flex.justify-center.py-8.px-8.bg-gray-800(
-      v-for="row in games"
-    )
-      img.object-contain(:src="row.image" :alt="row.label")
+h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Our Games
+p.mt-8.text-xl.leading-8
+  | Games we have played, corrently play, or plan on playing
+.mt-6.grid.grid-cols-2(class="gap-0.5 md:grid-cols-3 lg:mt-8")
+  .col-span-1.flex.justify-center.py-8.px-8.bg-gray-800(
+    v-for="row in games"
+  )
+    img.object-contain(:src="row.image" :alt="row.label")
 </template>
 
 <script lang="ts">
