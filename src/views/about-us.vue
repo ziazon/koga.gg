@@ -156,7 +156,7 @@ h1 banner section
                   .min-w-0.flex-1.flex.justify-between.space-x-4
                     div
                       p.text-xl.ml-2
-                        | doesn"t shit talk. shows up to a fight, kills or dies, with no more than a "gf" at the end.
+                        | doesn't shit talk. shows up to a fight, kills or dies, with no more than a "gf" at the end.
     li.py-4
       h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") History
       .flow-root
@@ -190,7 +190,7 @@ h1 banner section
                     p.text-3xl.text-gray-400
                       | 2004
                     p.text-xl
-                      | The leader of Yakuza Vanu and a few members left the original Planetside when the Johari merged with Markov and a few other changes came to the game that they weren"t a big fan of, in conjunction with the release of Lineage 2, an FFA pvp focused MMORPG. Koga Clan was formed on Gustin in Lineage 2 where the clan recruited up to exactly 2 groups that was maintained and never having more than that. The clan was hired on a regular basis to take castles for other clans and were at war with all major alliances on the server about 80% of the time. Koga Clan was considered the deadliest mercenary clan on the server for three years. Koga Clan also never (yes never) lost a single war. Those who remained in Planetside formed HAYABUSA and continued the tactical ops tradition the outfit so strongly believes in.
+                      | The leader of Yakuza Vanu and a few members left the original Planetside when the Johari merged with Markov and a few other changes came to the game that they weren't a big fan of, in conjunction with the release of Lineage 2, an FFA pvp focused MMORPG. Koga Clan was formed on Gustin in Lineage 2 where the clan recruited up to exactly 2 groups that was maintained and never having more than that. The clan was hired on a regular basis to take castles for other clans and were at war with all major alliances on the server about 80% of the time. Koga Clan was considered the deadliest mercenary clan on the server for three years. Koga Clan also never (yes never) lost a single war. Those who remained in Planetside formed HAYABUSA and continued the tactical ops tradition the outfit so strongly believes in.
           li
             .relative.pb-8
               span.absolute.top-5.left-5.-ml-px.h-full.bg-gray-700(class='w-0.5' aria-hidden='true')
@@ -205,7 +205,7 @@ h1 banner section
                     p.text-3xl.text-gray-400
                       |  2007
                     p.text-xl
-                      | The Lineage 2 group reemerged in WoW. The guild"s purpose was to develop skilled PvP players so that we could dominate in Open world PvP. Unfortunately WoW was not very well designed or suited for consistent open world PvP. However WoW was the fallback game for many Koga members to this day.
+                      | The Lineage 2 group reemerged in WoW. The guild's purpose was to develop skilled PvP players so that we could dominate in Open world PvP. Unfortunately WoW was not very well designed or suited for consistent open world PvP. However WoW is the fallback game for many Koga members to this day.
           li
             .relative.pb-8
               span.absolute.top-5.left-5.-ml-px.h-full.bg-gray-700(class='w-0.5' aria-hidden='true')
@@ -235,7 +235,7 @@ h1 banner section
                     p.text-3xl.text-gray-400
                       |  2008
                     p.text-xl
-                      | Had a recursion of players from HAYABUSA as free time from SOE came up and members were willing to come back spurred on by rumors of a Planetside sequel. Fun times were had as outfitmates who haven"t seen each other in a long time reminisced about the good ol days while killing Terrans and NCs.
+                      | Had a recursion of players from HAYABUSA as free time from SOE came up and members were willing to come back spurred on by rumors of a Planetside sequel. Fun times were had as outfitmates who haven't seen each other in a long time reminisced about the good ol days while killing Terrans and NCs.
           li
             .relative.pb-8
               span.absolute.top-5.left-5.-ml-px.h-full.bg-gray-700(class='w-0.5' aria-hidden='true')
@@ -265,7 +265,7 @@ h1 banner section
                     p.text-3xl.text-gray-400
                       |  2011
                     p.text-xl
-                      | The group has once again reformed into a small group (10-15) casually PvPing in Star War: The Old Republic.
+                      | The group has once again reformed into a small group (10-15) casually PvPing in Star Wars: The Old Republic.
           li
             .relative.pb-8
               span.absolute.top-5.left-5.-ml-px.h-full.bg-gray-700(class='w-0.5' aria-hidden='true')
@@ -310,7 +310,7 @@ h1 banner section
                     p.text-3xl.text-gray-400
                       |  2020
                     p.text-xl
-                      | Some members of both HAYABUSA and Koga played a bit of Albion Online, but it didn"t stick for most.
+                      | Some members of both HAYABUSA and Koga played a bit of Albion Online, but it didn't stick for most.
           li
             .relative.pb-8
               span.absolute.top-5.left-5.-ml-px.h-full
