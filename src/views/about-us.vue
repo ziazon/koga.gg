@@ -181,6 +181,7 @@ export default defineComponent({
       ],
       videos: [
         // L2R
+        'https://www.youtube.com/embed/xQ80S-wKHgM',
         'https://www.youtube.com/embed/47g8Rvc7pa4',
         'https://www.youtube.com/embed/f411P3mvRP4',
         'https://www.youtube.com/embed/Q1RPbAVuMDY',
