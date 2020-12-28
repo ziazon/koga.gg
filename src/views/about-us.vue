@@ -1,6 +1,5 @@
 <template lang="pug">
 h1 banner section
-.max-w-7xl.mx-auto.py-12.px-4(class="sm:px-6 lg:py-16 lg:px-8")
 .relative.px-4(class="sm:px-6 lg:px-8")
   ul.divide-y.divide-gray-700
     li.py-4

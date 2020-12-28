@@ -1,7 +1,10 @@
 <template lang="pug">
-h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Our Games
-p.mt-8.text-xl.leading-8
-  | Games we have played, corrently play, or plan on playing
+h1 banner section
+.relative.px-4(class="sm:px-6 lg:px-8")
+  p.mt-8.leading-8
+    h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Our Games
+    p.mt-8.leading-8
+      | Games we have played, corrently play, or plan on playing
 .mx-auto.py-12.px-4.max-w-7xl(class='sm:px-6 lg:px-8 lg:py-24')
   ul.space-y-12(class='sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:gap-x-8')
     li.shadow-lg.rounded-lg.bg-gray-800(v-for="row in games")
