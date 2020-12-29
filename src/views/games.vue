@@ -1,5 +1,4 @@
 <template lang="pug">
-h1 banner section
 .relative.px-4(class="sm:px-6 lg:px-8")
   p.mt-8.leading-8
     h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Our Games

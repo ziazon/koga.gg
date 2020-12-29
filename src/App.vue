@@ -1,6 +1,7 @@
 <template lang="pug">
 .container.mx-auto.h-screen.bg-gray-900.font-mono.text-gray-200
   TopNav
+  h1 banner section
   router-view
 </template>
 

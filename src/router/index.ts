@@ -14,12 +14,10 @@ const routes: Array<RouteRecordRaw> = [
       import(/* webpackChunkName: "recruitment" */ '../views/recruitment.vue')
   },
   {
-    path: '/rank-structure',
-    name: 'rank-structure',
+    path: '/structure',
+    name: 'structure',
     component: () =>
-      import(
-        /* webpackChunkName: "rank-structure" */ '../views/rank-structure.vue'
-      )
+      import(/* webpackChunkName: "structure" */ '../views/structure.vue')
   },
   {
     path: '/games',

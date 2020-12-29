@@ -1,4 +1,6 @@
-# website
+# koga.gg website
+
+See [koga.gg](https://koga.gg) for deployed site.
 
 ## Project setup
 
