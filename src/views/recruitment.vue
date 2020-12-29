@@ -1,106 +1,110 @@
 <template lang="pug">
-.bg-gray-800.shadow.my-5.px-4.py-5(class="sm:rounded-lg sm:p-6")
-  div(class="md:grid md:grid-cols-3 md:gap-6")
-    div(class="md:col-span-1")
-      h3.text-lg.font-medium.leading-6 Personal
-      p.mt-1.text-sm
-        | Personal and account information.
-    .mt-5(class="md:mt-0 md:col-span-2")
-      .space-y-6
-        div
-          label.block.text-sm.font-medium
-            | Discord Name
-          .mt-1.flex.rounded-md.shadow-sm
-            input.block.w-full.shadow-sm.py-3.px-4.placeholder-gray-500.border-gray-300.rounded-md.text-gray-900(
-              type="text"
-              class="focus:ring-indigo-500 focus:border-indigo-500"
-              v-model="form.discordName"
-            )
-          p.mt-2.text-sm
-            | Your full discord name including the #0000 part. This is how we will be contacting you, so please type it in correctly!
-        fieldset
-          legend.text-base.font-medium How did you hear about us?
-          .mt-4.space-y-4
-            div(v-for="source in referalSources")
-              .flex.items-center
-                input.h-4.w-4.text-indigo-600.border-gray-300(
-                  name="referal_source"
-                  type="radio"
-                  class="focus:ring-indigo-500"
-                  :value="source.value"
-                  v-model="form.referalSource"
-                  @change="form.referalDetails = ''"
-                )
-                label.ml-3.block.text-sm.font-medium
-                  | {{ source.value }}
-              div(v-if="shouldDisplayMoreInfo(source)")
+.px-4(class="sm:px-6 lg:px-8")
+  p.mt-8.leading-8
+    h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Our Games
+    p.mt-8.leading-8
+      .bg-gray-800.shadow.my-5.px-4.py-5(class="sm:rounded-lg sm:p-6")
+        div(class="md:grid md:grid-cols-3 md:gap-6")
+          div(class="md:col-span-1")
+            h3.text-lg.font-medium.leading-6 Personal
+            p.mt-1.text-sm
+              | Personal and account information.
+          .mt-5(class="md:mt-0 md:col-span-2")
+            .space-y-6
+              div
+                label.block.text-sm.font-medium
+                  | Discord Name
                 .mt-1.flex.rounded-md.shadow-sm
-                  input.block.w-full.shadow-sm.py-3.px-4.border-gray-300.rounded-md.text-gray-900(
+                  input.block.w-full.shadow-sm.py-3.px-4.placeholder-gray-500.border-gray-300.rounded-md.text-gray-900(
                     type="text"
                     class="focus:ring-indigo-500 focus:border-indigo-500"
-                    v-model="form.referalDetails"
+                    v-model="form.discordName"
                   )
                 p.mt-2.text-sm
-                  | {{ source.moreInfo }}
-        div
-          label.block.text-sm.font-medium
-            | Why do you wish to join us?
-          .mt-1
-            textarea.shadow-sm.block.w-full.border-gray-300.rounded-md.text-gray-900(
-              rows="5"
-              class="focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              v-model="form.whyJoinUs"
-            )
-          p.mt-2.text-sm
-            | Be detailed.  We won't consider applications with short answers.
-.bg-gray-800.shadow.my-5.px-4.py-5(class="sm:rounded-lg sm:p-6")
-  div(class="md:grid md:grid-cols-3 md:gap-6")
-    div(class="md:col-span-1")
-      h3.text-lg.font-medium.leading-6 Gameplay
-      p.mt-1.text-sm
-        | Playstyle and experience information.
-    .mt-5(class="md:mt-0 md:col-span-2")
-      fieldset.mt-4.space-y-4
-        legend.text-base.font-medium What's your Time zone
-        .flex.items-start
-          select.mt-1.block.w-full.pl-3.pr-10.py-2.text-base.border-gray-300.rounded-md.text-gray-900(name="timezone" class="focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm")
-            option(v-for="timezone in timezones" :value="timezone.value" :selected="isSelectedTimeZone(timezone.value)") {{ timezone.name }}
-      fieldset.mt-4.space-y-4
-        legend.text-base.font-medium What's your place schedule look like?
-        ul.mt-3.grid.grid-cols-1.gap-5(class='sm:gap-6 sm:grid-cols-2 lg:grid-cols-4')
-          li.col-span-1.flex.shadow-sm.rounded-md(v-for="time in timesOfDay")
-            .flex.items-center
-              button.bg-gray-200.relative.inline-flex.flex-shrink-0.h-6.w-11.border-2.border-transparent.rounded-full.cursor-pointer.transition-colors.ease-in-out.duration-200(
-                type="button"
-                aria-pressed="false"
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                :class="getTimeButtonClass(time)"
-                @click="toggleTime(time)"
-              )
-                span.inline-block.h-5.w-5.rounded-full.bg-white.shadow.transform.ring-0.transition.ease-in-out.duration-200(
-                  aria-hidden="true"
-                  :class="getToggleStateClass(time)"
-                )
-              span.ml-3
-                span.text-sm.font-medium {{ getHourLabel(time) }}
-      fieldset.mt-4.space-y-4
-        legend.text-base.font-medium For each of the following scenarios, please detail your level of experience using examples and achievements.
-        .space-y-6
-          div(v-for="scenario in pvpScenarios")
-            label.block.text-sm.font-medium
-              | {{ scenario }}
-            .mt-1.flex.rounded-md.shadow-sm
-              input.block.w-full.shadow-sm.py-3.px-4.placeholder-gray-500.border-gray-300.rounded-md.text-gray-900(
-                type="text"
-                class="focus:ring-indigo-500 focus:border-indigo-500"
-                v-model="form.gameplayExperience[scenario]"
-              )
-.flex.justify-end
-  button.inline-flex.justify-center.py-3.px-6.border.border-transparent.shadow-sm.text-base.font-medium.rounded-md.text-white.bg-indigo-600(
-    class="hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-    @click="sendForm()"
-  )
-    | Submit
+                  | Your full discord name including the #0000 part. This is how we will be contacting you, so please type it in correctly!
+              fieldset
+                legend.text-base.font-medium How did you hear about us?
+                .mt-4.space-y-4
+                  div(v-for="source in referalSources")
+                    .flex.items-center
+                      input.h-4.w-4.text-indigo-600.border-gray-300(
+                        name="referal_source"
+                        type="radio"
+                        class="focus:ring-indigo-500"
+                        :value="source.value"
+                        v-model="form.referalSource"
+                        @change="form.referalDetails = ''"
+                      )
+                      label.ml-3.block.text-sm.font-medium
+                        | {{ source.value }}
+                    div(v-if="shouldDisplayMoreInfo(source)")
+                      .mt-1.flex.rounded-md.shadow-sm
+                        input.block.w-full.shadow-sm.py-3.px-4.border-gray-300.rounded-md.text-gray-900(
+                          type="text"
+                          class="focus:ring-indigo-500 focus:border-indigo-500"
+                          v-model="form.referalDetails"
+                        )
+                      p.mt-2.text-sm
+                        | {{ source.moreInfo }}
+              div
+                label.block.text-sm.font-medium
+                  | Why do you wish to join us?
+                .mt-1
+                  textarea.shadow-sm.block.w-full.border-gray-300.rounded-md.text-gray-900(
+                    rows="5"
+                    class="focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    v-model="form.whyJoinUs"
+                  )
+                p.mt-2.text-sm
+                  | Be detailed.  We won't consider applications with short answers.
+      .bg-gray-800.shadow.my-5.px-4.py-5(class="sm:rounded-lg sm:p-6")
+        div(class="md:grid md:grid-cols-3 md:gap-6")
+          div(class="md:col-span-1")
+            h3.text-lg.font-medium.leading-6 Gameplay
+            p.mt-1.text-sm
+              | Playstyle and experience information.
+          .mt-5(class="md:mt-0 md:col-span-2")
+            fieldset.mt-4.space-y-4
+              legend.text-base.font-medium What's your Time zone
+              .flex.items-start
+                select.mt-1.block.w-full.pl-3.pr-10.py-2.text-base.border-gray-300.rounded-md.text-gray-900(name="timezone" class="focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm")
+                  option(v-for="timezone in timezones" :value="timezone.value" :selected="isSelectedTimeZone(timezone.value)") {{ timezone.name }}
+            fieldset.mt-4.space-y-4
+              legend.text-base.font-medium What's your place schedule look like?
+              ul.mt-3.grid.grid-cols-1.gap-5(class='sm:gap-6 sm:grid-cols-2 lg:grid-cols-4')
+                li.col-span-1.flex.shadow-sm.rounded-md(v-for="time in timesOfDay")
+                  .flex.items-center
+                    button.bg-gray-200.relative.inline-flex.flex-shrink-0.h-6.w-11.border-2.border-transparent.rounded-full.cursor-pointer.transition-colors.ease-in-out.duration-200(
+                      type="button"
+                      aria-pressed="false"
+                      class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      :class="getTimeButtonClass(time)"
+                      @click="toggleTime(time)"
+                    )
+                      span.inline-block.h-5.w-5.rounded-full.bg-white.shadow.transform.ring-0.transition.ease-in-out.duration-200(
+                        aria-hidden="true"
+                        :class="getToggleStateClass(time)"
+                      )
+                    span.ml-3
+                      span.text-sm.font-medium {{ getHourLabel(time) }}
+            fieldset.mt-4.space-y-4
+              legend.text-base.font-medium For each of the following scenarios, please detail your level of experience using examples and achievements.
+              .space-y-6
+                div(v-for="scenario in pvpScenarios")
+                  label.block.text-sm.font-medium
+                    | {{ scenario }}
+                  .mt-1.flex.rounded-md.shadow-sm
+                    input.block.w-full.shadow-sm.py-3.px-4.placeholder-gray-500.border-gray-300.rounded-md.text-gray-900(
+                      type="text"
+                      class="focus:ring-indigo-500 focus:border-indigo-500"
+                      v-model="form.gameplayExperience[scenario]"
+                    )
+    .flex.justify-end
+      button.inline-flex.justify-center.py-3.px-6.border.border-transparent.shadow-sm.text-base.font-medium.rounded-md.text-white.bg-indigo-600(
+        class="hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        @click="sendForm()"
+      )
+        | Submit
 </template>
 
 <script lang="ts">

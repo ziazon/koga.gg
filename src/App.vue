@@ -1,8 +1,9 @@
 <template lang="pug">
-.container.mx-auto.h-screen.bg-gray-900.font-mono.text-gray-200.font-mono
+.container.mx-auto.font-mono.text-gray-200.pb-8
   TopNav
-  h1 banner section
-  router-view
+  .bg-gray-900.pb-8.shadow-lg.rounded-lg
+    h1 banner section
+    router-view
 </template>
 
 <style lang="scss"></style>
