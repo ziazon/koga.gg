@@ -10,12 +10,12 @@
       li.text-center.py-3 {{branch.name}}
       li.text-center.py-3.bg-gray-800(v-for="ranks in branch.ranks")
         .space-y-4(class="lg:space-x-6")
-          .grid.gap-1.flex.items-center.justify-between.p-2(v-if="ranks.length === 0")
+          .grid.gap-1.flex.items-center.p-2(v-if="ranks.length === 0")
             ul
               .w-16.h-16.rounded-full.inline-block(class="lg:w-20 lg:h-20")
               .font-medium.text-lg.leading-6.space-y-1
                 h3 &nbsp;
-          .grid.gap-1.flex.items-center.justify-between.bg-gray-700.p-2(v-else :class="getColumnClass(ranks.length)")
+          .grid.gap-1.flex.items-center.bg-gray-700.p-2(v-else :class="getColumnClass(ranks.length)")
             .font-medium.text-lg.leading-6.space-y-1(v-for="rank in ranks")
               img.w-16.h-16.rounded-full.inline-block(class="lg:w-20 lg:h-20" v-if="rank.icon" :src="rank.icon" :alt="rank.name")
               h3 {{ rank.name }}
