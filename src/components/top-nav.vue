@@ -22,7 +22,7 @@ nav.py-2.px-3.z-10.fixed.w-full(class="md:p-3")
       :class="{hidden: !isOpen, block: isOpen}"
     )
       li.py-2(class="md:px-6" v-for="row in links")
-        router-link(:to="row.link" active-class="text-brand") {{ row.label }}
+        router-link(:to="row.link" active-class="text-yellow-500") {{ row.label }}
 
 </template>
 
