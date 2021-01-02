@@ -2,14 +2,14 @@
 header.header.relative(class="lg:overflow-hidden")
   .absolute.inset-0.z-negative
     .video-wrapper
-      video.object-cover.w-full.h-screen(autoplay loop muted playsInline)
+      video.object-cover.w-full.h-screen(autoplay loop muted playsinline)
         source(:src="mp4BackgroundVideo" type="video/mp4")
         source(:src="webmBackgroundVideo" type="video/webm")
         img(:src="imgBackgrounVideo")
 
   TopNav
 .container.mx-auto.text-gray-200.pb-8.font-sans
-  .bg-gray-900.pb-8.shadow-lg.rounded-lg
+  .bg-gray-900.pb-8.shadow-lg.rounded-lg.bg-opacity-90
     router-view
 </template>
 

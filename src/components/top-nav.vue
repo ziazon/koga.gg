@@ -37,6 +37,7 @@ export default defineComponent({
       links: [
         { label: 'About', link: '/' },
         { label: 'Structure', link: '/structure' },
+        { label: 'Videos', link: '/videos' },
         { label: 'Games', link: '/games' },
         { label: 'Recruitment', link: '/recruitment' }
       ]
