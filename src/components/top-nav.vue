@@ -1,7 +1,7 @@
 <template lang="pug">
-nav.bg-black
-  .relative.flex.items-center.justify-between.h-64
-    .absolute.inset-y-0.left-0.flex.items-center(class="sm:hidden")
+nav.py-2.px-3.z-10.fixed.w-full(class="md:p-3")
+  .container.mx-auto.block.flex-wrap.items-center.justify-start(class="md:flex")
+    .inset-y-0.left-0.flex(class="sm:hidden")
       button.inline-flex.items-center.justify-center.p-2.rounded-md.text-gray-400(
         class="hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
         aria-expanded="false"
@@ -16,15 +16,13 @@ nav.bg-black
           aria-hidden="true"
         )
           path(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="mobileMenuD")
-    .flex-1.flex.items-center.justify-center(class="sm:items-stretch sm:justify-start")
-      .flex.items-center
-        img.h-64.w-auto(:src="logo" alt="Koga")
-      .hidden.my-auto(class="sm:block sm:ml-6")
-        .flex.space-x-4
-          router-link.px-3.py-2.rounded-md.text-sm.text-gray-300.text-base(v-for="row in links" :to="row.link" active-class="bg-gray-900 text-white" class="sm:text-base md:text-2xl lg:text-3xl hover:bg-gray-700 hover:text-white") {{ row.label }}
-  div(:class="{hidden: !isOpen, block: isOpen}" class="sm:hidden")
-    .px-2.pt-2.pb-3.space-y-1
-      router-link.block.px-3.py-2.rounded-md.text-base.text-gray-300.font-medium(v-for="row in links" :to="row.link" active-class="bg-gray-900 text-white" class="hover:bg-gray-700 hover:text-white") {{ row.label }}
+    ul.flex-wrap.items-center.justify-start.text-white(
+      data-menu=""
+      class="md:flex"
+      :class="{hidden: !isOpen, block: isOpen}"
+    )
+      li.py-2(class="md:px-6" v-for="row in links")
+        router-link(:to="row.link" active-class="text-brand") {{ row.label }}
 
 </template>
 
