@@ -1,6 +1,6 @@
 <template lang="pug">
 header.header.relative(class="lg:overflow-hidden")
-  .absolute.inset-0.z-negative.opacity-50(class="lg:opacity-100")
+  .absolute.inset-0.z-negative
     .video-wrapper
       video.object-cover.w-full.h-screen(autoplay loop muted playsInline)
         source(:src="mp4BackgroundVideo" type="video/mp4")
