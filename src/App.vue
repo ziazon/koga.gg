@@ -25,9 +25,9 @@ export default defineComponent({
   },
   data() {
     return {
-      mp4BackgroundVideo: '/media/koga-splash.mp4',
-      webmBackgroundVideo: '/media/koga-splash.webm',
-      imgBackgrounVideo: '/media/koga-splash.gif'
+      mp4BackgroundVideo: require('@/assets/koga-splash.mp4'),
+      webmBackgroundVideo: require('@/assets/koga-splash.webm'),
+      imgBackgrounVideo: require('@/assets/koga-splash.gif')
     };
   }
 });
