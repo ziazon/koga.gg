@@ -138,7 +138,7 @@ export default defineComponent({
       const hourInSelected = this.form.times.includes(hour);
       if (hourInSelected)
         this.form.times = this.form.times.filter(
-          selectedHour => selectedHour !== hour
+          (selectedHour) => selectedHour !== hour
         );
       else this.form.times.push(hour);
     },
