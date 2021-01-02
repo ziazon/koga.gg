@@ -40,26 +40,16 @@ export default defineComponent({
   background: rgba(0, 0, 0, 0.2);
 }
 
-.video-cta {
-  height: auto;
-}
-
 @media (min-width: 1024px) {
   .header {
     height: 762px;
   }
+}
 
-  .video-cta {
-    height: 582px;
+@media (max-width: 1024px) {
+  .header {
+    height: 381px;
   }
-}
-
-.btn-primary {
-  @apply bg-black text-white px-10 py-3 my-2 inline-block;
-}
-
-.btn-primary:hover {
-  @apply bg-black;
 }
 
 @media only screen and (min-width: 768px) {
