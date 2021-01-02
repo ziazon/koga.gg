@@ -2,9 +2,10 @@
 header.header.relative(class="lg:overflow-hidden")
   .absolute.inset-0.z-negative.opacity-50(class="lg:opacity-100")
     .video-wrapper
-      video.object-cover.w-full.h-full(autoplay loop muted)
+      video.object-cover.w-full.h-screen(autoplay loop muted playsInline)
         source(:src="mp4BackgroundVideo" type="video/mp4")
         source(:src="webmBackgroundVideo" type="video/webm")
+        img(:src="imgBackgrounVideo")
 
   TopNav
 .container.mx-auto.text-gray-200.pb-8.font-sans
@@ -25,31 +26,20 @@ export default defineComponent({
   data() {
     return {
       mp4BackgroundVideo: require('@/assets/koga-splash.mp4'),
-      webmBackgroundVideo: require('@/assets/koga-splash.webm')
+      webmBackgroundVideo: require('@/assets/koga-splash.webm'),
+      imgBackgrounVideo: require('@/assets/koga-splash.gif')
     };
   }
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header {
-  height: auto;
+  height: calc(100vh - 200px);
 }
 
 .header nav {
   background: rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: 1024px) {
-  .header {
-    height: 762px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .header {
-    height: 381px;
-  }
 }
 
 @media only screen and (min-width: 768px) {
