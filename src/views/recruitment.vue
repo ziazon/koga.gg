@@ -1,7 +1,7 @@
 <template lang="pug">
 .px-4(class="sm:px-6 lg:px-8")
   p.mt-8.leading-8
-    h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Our Games
+    h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Join Us
     p.mt-8.leading-8
       .bg-gray-800.shadow.my-5.px-4.py-5(class="sm:rounded-lg sm:p-6")
         div(class="md:grid md:grid-cols-3 md:gap-6")
