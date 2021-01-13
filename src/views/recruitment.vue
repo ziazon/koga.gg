@@ -110,6 +110,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import moment from 'moment';
+import { WebhookClient, MessageEmbed } from 'discord.js';
 
 export default defineComponent({
   name: 'Recruitment',
@@ -158,8 +159,62 @@ export default defineComponent({
       this.form.gameplayExperience = {};
     },
     sendForm() {
-      //  TODO: send this form to discord recruitment channel.
-      this.resetForm();
+      // TODO: Add Validation
+      const hook = new WebhookClient(
+        '798899769858195487',
+        '0ExGM17nfmIlQM3Hlva1KSALPD3U6H77cCHNPnEt6uf2Cl5JTV1ySurpAcNW4PoTAOzY'
+      );
+      hook
+        .send({
+          embeds: [this.discordMessageSummary, this.discordMessageDetails]
+        })
+        .then(this.resetForm);
+    }
+  },
+  computed: {
+    selectedTimezoneLabel(): string {
+      const { name } =
+        this.timezones.find(
+          (timezone) => timezone.value === this.form.timezone
+        ) || {};
+      return name || '';
+    },
+    referalSourceAndDetail(): string {
+      const append = this.form.referalDetails
+        ? `: ${this.form.referalDetails}`
+        : '';
+      return this.form.referalSource + append;
+    },
+    discordMessageSummary(): MessageEmbed {
+      return new MessageEmbed()
+        .setTitle(
+          `${this.form.discordName} Via: ${this.referalSourceAndDetail}`
+        )
+        .setColor(0xff0000)
+        .setDescription(this.form.whyJoinUs);
+    },
+    discordMessageDetails(): MessageEmbed {
+      return new MessageEmbed()
+        .setTitle('Gameplay')
+        .setColor(0xff0000)
+        .setDescription('Playstyle and Experience')
+        .addFields([
+          {
+            name: 'Timezone',
+            value: this.selectedTimezoneLabel
+          },
+          {
+            name: 'Play Schedule',
+            value: 'Coming soon.  need to switch this to a calendar matrix'
+          },
+          ...Object.entries(this.form.gameplayExperience).map(
+            ([style, value]) => ({
+              name: `Level of Experience: ${style}`,
+              value,
+              inline: true
+            })
+          )
+        ]);
     }
   },
   data() {
