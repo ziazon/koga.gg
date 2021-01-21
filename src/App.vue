@@ -13,26 +13,6 @@ header.header.relative(class="lg:overflow-hidden")
     router-view
 </template>
 
-<style lang="scss"></style>
-<script lang="ts">
-import { defineComponent } from 'vue';
-import TopNav from '@/components/top-nav.vue';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    TopNav
-  },
-  data() {
-    return {
-      mp4BackgroundVideo: require('@/assets/koga-splash.mp4'),
-      webmBackgroundVideo: require('@/assets/koga-splash.webm'),
-      imgBackgrounVideo: require('@/assets/koga-splash.gif')
-    };
-  }
-});
-</script>
-
 <style lang="scss" scoped>
 .header {
   height: calc(100vh - 200px);
@@ -57,3 +37,21 @@ export default defineComponent({
   }
 }
 </style>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import TopNav from '@/components/top-nav.vue';
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    TopNav
+  },
+  data() {
+    return {
+      mp4BackgroundVideo: require('@/assets/koga-splash.mp4'),
+      webmBackgroundVideo: require('@/assets/koga-splash.webm'),
+      imgBackgrounVideo: require('@/assets/koga-splash.gif')
+    };
+  }
+});
+</script>
