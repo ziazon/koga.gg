@@ -68,7 +68,7 @@
               select.mt-1.block.w-full.pl-3.pr-10.py-2.text-base.border-gray-300.rounded-md.text-gray-900(name="timezone" class="focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm")
                 option(v-for="timezone in timezones" :value="timezone.value" :selected="isSelectedTimeZone(timezone.value)") {{ timezone.name }}
           fieldset.mt-4.space-y-4
-            legend.text-base.font-medium What's your place schedule look like?
+            legend.text-base.font-medium What's your play schedule look like?
             span.text-sm Alt Drag on Windows, or Command Drag on Mac to Select multiple ranges
             PlaySchedule(@selections="setSelections")
           fieldset.mt-4.space-y-4
