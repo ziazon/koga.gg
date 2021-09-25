@@ -1,48 +1,50 @@
 <template lang="pug">
-.relative.px-4(class="sm:px-6 lg:px-8")
-  ul.divide-y.divide-gray-700
-    li.py-4
-      h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Who We Are
-      p.mt-8.leading-8(v-for="paragraph in whoWeAre") {{ paragraph }}
-    li.py-4
-      h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Why Join Us
-      .flow-root
-        .grid(class="lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12")
-          ul.-mb-8(v-for="list in whyjoin")
-            li
-              .block.my-8.text-base.font-semibold.tracking-wide.uppercase
-                | {{ list.title }}
-            li(v-for="(reason, index) in list.reasons")
-              .relative.pb-8
-                span.absolute.top-4.left-4.-ml-px.h-full(:class="{'bg-gray-700 w-0.5': list.reasons.length > index+1}")
-                .relative.flex.space-x-3
-                  div
-                    span.h-8.w-8.rounded-full.bg-green-500.flex.items-center.justify-center.ring-8.ring-grey
-                      svg.h-5.w-5.text-white(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true")
-                        path(fill-rule="evenodd" :d="list.shape" clip-rule="evenodd")
-                  .min-w-0.flex-1.flex.justify-between.space-x-4
+.about-container.shadow-lg.rounded-lg.container.mx-auto.text-gray-200.pb-8.font-sans.bg-gray-800
+  .bg-gray-900.pb-8.shadow-lg.rounded-lg.bg-opacity-90
+    .relative.px-4(class="sm:px-6 lg:px-8")
+      ul.divide-y.divide-gray-700
+        li.py-4
+          h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Who We Are
+          p.mt-8.leading-8(v-for="paragraph in whoWeAre") {{ paragraph }}
+        li.py-4
+          h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") Why Join Us
+          .flow-root
+            .grid(class="lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12")
+              ul.-mb-8(v-for="list in whyjoin")
+                li
+                  .block.my-8.text-base.font-semibold.tracking-wide.uppercase
+                    | {{ list.title }}
+                li(v-for="(reason, index) in list.reasons")
+                  .relative.pb-8
+                    span.absolute.top-4.left-4.-ml-px.h-full(:class="{'bg-gray-700 w-0.5': list.reasons.length > index+1}")
+                    .relative.flex.space-x-3
+                      div
+                        span.h-8.w-8.rounded-full.bg-green-500.flex.items-center.justify-center.ring-8.ring-grey
+                          svg.h-5.w-5.text-white(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true")
+                            path(fill-rule="evenodd" :d="list.shape" clip-rule="evenodd")
+                      .min-w-0.flex-1.flex.justify-between.space-x-4
+                        div
+                          p.ml-2
+                            | {{ reason }}
+        li.py-4
+          h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") History
+          .flow-root
+            ul.-mb-8
+              li(v-for="(event, index) in history")
+                .relative.pb-8
+                  span.absolute.top-5.left-5.-ml-px.h-full.bg-gray-700(:class="{'bg-gray-700 w-0.5': history.length > index+1}")
+                  .relative.flex.items-start.space-x-3
                     div
-                      p.ml-2
-                        | {{ reason }}
-    li.py-4
-      h3.mt-2.block.text-3xl.text-center.text-gray-400.leading-8.font-extrabold(class="sm:text-4xl") History
-      .flow-root
-        ul.-mb-8
-          li(v-for="(event, index) in history")
-            .relative.pb-8
-              span.absolute.top-5.left-5.-ml-px.h-full.bg-gray-700(:class="{'bg-gray-700 w-0.5': history.length > index+1}")
-              .relative.flex.items-start.space-x-3
-                div
-                  .relative.px-1
-                    span.h-8.w-8.rounded-full.bg-green-500.flex.items-center.justify-center.ring-8.ring-grey
-                      svg.h-5.w-5.text-white(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true")
-                        path(fill-rule="evenodd" :d="event.shape" clip-rule="evenodd")
-                .min-w-0.flex-1.py-0
-                  div.ml-2
-                    p.text-3xl.text-gray-400
-                      | {{ event.period }}
-                    p
-                      | {{ event.details }}
+                      .relative.px-1
+                        span.h-8.w-8.rounded-full.bg-green-500.flex.items-center.justify-center.ring-8.ring-grey
+                          svg.h-5.w-5.text-white(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true")
+                            path(fill-rule="evenodd" :d="event.shape" clip-rule="evenodd")
+                    .min-w-0.flex-1.py-0
+                      div.ml-2
+                        p.text-3xl.text-gray-400
+                          | {{ event.period }}
+                        p
+                          | {{ event.details }}
 </template>
 
 <script lang="ts">
@@ -159,6 +161,13 @@ export default defineComponent({
         {
           period: 'Present',
           details:
+            'On a whim we decided to check out New World, and discovered that it is a WHOLE lot of fun! Especially the pvp of the game being the style we enjoy the most, so for now that is what we are playing!  Until Ashes comes out in 2-3 years :)',
+          shape:
+            'M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z'
+        },
+        {
+          period: 'Future',
+          details:
             'After 15 years of waiting for a great MMORPG, is Ashes of Creation it? we sure hope so! In the meantime we play an assortment of games together. Among Us, Overwatch, Sea of Thieves, and GTAV are some of the games we play, and are always open to try new games as a group.',
           shape:
             'M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z'
@@ -169,4 +178,8 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.about-container {
+  margin-top: 1000px;
+}
+</style>

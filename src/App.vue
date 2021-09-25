@@ -8,14 +8,12 @@ header.header.relative(class="lg:overflow-hidden")
         img(:src="imgBackgrounVideo")
 
   TopNav
-.container.mx-auto.text-gray-200.pb-8.font-sans
-  .bg-gray-900.pb-8.shadow-lg.rounded-lg.bg-opacity-90
-    router-view
+router-view
 </template>
 
 <style lang="scss" scoped>
 .header {
-  height: calc(100vh - 200px);
+  height: 100px;
 }
 
 .header nav {
