@@ -1,41 +1,34 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'about-us',
-    component: () =>
-      import(/* webpackChunkName: "about-us" */ '../views/about-us.vue')
-  },
-  {
-    path: '/recruitment',
-    name: 'recruitment',
-    component: () =>
-      import(/* webpackChunkName: "recruitment" */ '../views/recruitment.vue')
-  },
-  {
-    path: '/structure',
-    name: 'structure',
-    component: () =>
-      import(/* webpackChunkName: "structure" */ '../views/structure.vue')
-  },
-  {
-    path: '/videos',
-    name: 'videos',
-    component: () =>
-      import(/* webpackChunkName: "videos" */ '../views/videos.vue')
-  },
-  {
-    path: '/games',
-    name: 'games',
-    component: () =>
-      import(/* webpackChunkName: "games" */ '../views/games.vue')
-  }
-];
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: import('@/views/HomePage.vue')
+    },
+    {
+      path: '/recruitment',
+      name: 'recruitment',
+      component: () => import('@/views/RecruitmentPage.vue')
+    },
+    {
+      path: '/structure',
+      name: 'structure',
+      component: () => import('@/views/StructurePage.vue')
+    },
+    {
+      path: '/videos',
+      name: 'videos',
+      component: () => import('@/views/VideosPage.vue')
+    },
+    {
+      path: '/games',
+      name: 'games',
+      component: () => import('@/views/GamesPage.vue')
+    }
+  ]
 });
 
 export default router;

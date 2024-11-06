@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: 'media',
   theme: {
@@ -10,15 +11,15 @@ module.exports = {
       20: '20',
       30: '30',
       40: '40',
-      50: '50'
-    }
+      50: '50',
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio')
-  ]
-};
+    require('@tailwindcss/aspect-ratio'),
+  ],
+}
