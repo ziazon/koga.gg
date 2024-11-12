@@ -9,9 +9,9 @@ const bookmarkIcon =
   'M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z';
 
 const whoWeAre = ref<string[]>([
-  'We are a PVP first clan, where everything we do is in support of our goal of being the best elite fighting force on our server for our small size.',
+  'We are a PVP first clan, where everything we do is in support of our goal of being a small elite fighting force on our server.',
   'While leveling, we tend to run in the same groups that we do when we’re pvping.  This is done so that our team cohesion and dynamics are well maintained, and don’t require any setup time if/when pvp happens;  we are simply ready.',
-  'We don’t go after lowbies or weak enemies, except in the event that said person(s) are griefers.  However we have a healthy kill or be killed mentality where our inclination is more on killing a person or team over a resource/hunting area rather than share.  If we are inclined to take a spot, we take it.  We might be included to ask folks to leave first, but it’s on a case by case basis.',
+  'We don’t go after lowbies or weak enemies, except in the event that said person(s) are griefers.  However we have a healthy kill or be killed mentality where our inclination is more toward killing a person or team over a resource/hunting area rather than share with unknown players.',
   'Effective strategies start with training. Drills and running through tactics, getting our timing from a strategic battlefield perspective is key to our play style in pvp due to our focus on gorilla warfare as a primary source of content.  Our Squad and Platoon leaders hold drills periodically focusing a good amount on timing of everything from kiting to flanking with 2-3 different groups working together.'
 ]);
 const whyjoin = ref<{ title: string; shape: string; reasons: string[] }[]>([
@@ -44,19 +44,19 @@ const history = ref<{ period: string; details: string; shape: string }[]>([
   {
     period: '2003',
     details:
-      'Koga was originally known as Yakuza Vanu on the Johari server in the original Planetside. Reaching a rank of 4th on the server for outfit points with the smallest outfit in the top 15 outfits with only 80 on roster (60 actual players, 30-40 on during primetime), the outfit leader (Jubei) was the second Command Rank 5 on the server.',
+      'Koga was originally known as Yakuza Vanu on the Johari server in the original Planetside. Reaching a rank of 4th on the server for outfit points with the smallest outfit in the top 15 outfits with only 80 on roster (60 actual players, 30-40 on during primetime). The next smallest outfit in the top 15 was 200 strong, and the rest somewhere between 400 and 1500 strong. The outfit leader (Jubei) was the second Command Rank 5 on the server.',
     shape: bookmarkIcon
   },
   {
     period: '2004',
     details:
-      "The leader of Yakuza Vanu and a few members left the original Planetside when the Johari merged with Markov and a few other changes came to the game that they weren't a big fan of, in conjunction with the release of Lineage 2, an FFA pvp focused MMORPG. Koga Clan was formed on Gustin in Lineage 2 where the clan recruited up to exactly 2 groups that was maintained and never having more than that. The clan was hired on a regular basis to take castles for other clans and were at war with all major alliances on the server about 80% of the time. Koga Clan was considered the deadliest mercenary clan on the server for three years. Koga Clan also never (yes never) lost a single war. Those who remained in Planetside formed HAYABUSA and continued the tactical ops tradition the outfit so strongly believes in.",
+      "The leader of Yakuza Vanu and a few members left the original Planetside when the Johari server merged with Markov and a few other changes came to the game that we weren't a big fan of, in conjunction with the release of Lineage 2, an FFA pvp focused MMORPG. Koga Clan was formed on Gustin in Lineage 2 where the clan recruited for two groups, our largest being 3 groups. The clan was hired on a regular basis to take castles for other clans and were at war with all major alliances on the server about 80% of the time. Koga Clan was considered the deadliest mercenary clan on the server for three years. Koga Clan also never (yes never) lost a single war. Those who remained in Planetside formed HAYABUSA and continued the tactical ops tradition the outfit so strongly believes in.",
     shape: bookmarkIcon
   },
   {
     period: '2007',
     details:
-      "The Lineage 2 group reemerged in WoW. The guild's purpose was to develop skilled PvP players so that we could dominate in Open world PvP. Unfortunately WoW was not very well designed or suited for consistent open world PvP. However WoW is the fallback game for many Koga members to this day.",
+      "The Lineage 2 group reemerged in WoW. The guild's purpose was to develop skilled PvP players so that we could dominate in Open world PvP. Unfortunately WoW was not very well designed or suited for consistent open world PvP. However WoW was the fallback game for many Koga members for a long time.",
     shape: bookmarkIcon
   },
   {
@@ -68,13 +68,13 @@ const history = ref<{ period: string; details: string; shape: string }[]>([
   {
     period: '2008',
     details:
-      "Had a recursion of players from HAYABUSA as free time from SOE came up and members were willing to come back spurred on by rumors of a Planetside sequel. Fun times were had as outfitmates who haven't seen each other in a long time reminisced about the good ol days while killing Terrans and NCs.",
+      "Having a recursion of players from HAYABUSA as free time from Sony Online Entertainment (makers of Planetside) came up and members were willing to come back spurred on by rumors of a Planetside sequel. Fun times were had as outfitmates who haven't seen each other in a long time reminisced about the good ol days while killing Terrans and New Conglomerates.",
     shape: bookmarkIcon
   },
   {
     period: '2010',
     details:
-      'Koga Clan joined up with HAYABUSA in Global Agenda. It was during this time that the group saw its greatest successes since Lineage 2 for Koga and Planetside 1 for HAYABUSA. With the help and drive of a new skilled player base HAYABUSA managed to level all opposition and globally colonize the entire Alliance vs Alliance map Sovereign in season 1. This took months of dedication and after the final triumph the outfit needed a break…',
+      'Koga Clan joined up with HAYABUSA in Global Agenda. It was during this time that the group saw its greatest successes since Lineage 2 for Koga and Planetside 1 for HAYABUSA. With the help and drive of a new skilled player base HAYABUSA managed to level all opposition and globally colonize the entire Alliance vs Alliance map Sovereign in season 1. This took months of dedication and after the final triumph the outfit needed a break.',
     shape: bookmarkIcon
   },
   {
@@ -104,13 +104,13 @@ const history = ref<{ period: string; details: string; shape: string }[]>([
   {
     period: '2021',
     details:
-      'Koga got together to play New World since launch.  However many quit due to the many game breaking bugs that were introduced in the first 6 months.  Those who remained continued to play for about a year and half before most of the rest of us quit and want to other games.',
+      'Koga got together to play New World.  However many quit due to the many game breaking bugs that were introduced in the first 6 months.  Those who remained continued to play for about a year and half before most of the rest quit and went to other games.',
     shape: bookmarkIcon
   },
   {
     period: 'Present',
     details:
-      'After 20 years of waiting for a great MMORPG, is Ashes of Creation it? It sure looks like it so far! We are currently in Alpha Two testing with a small core of our members who were able to get into Alpha One and Two.  Our plan is to continue testing and playing the game, building out knowledge and relationships within the game so we are ready to hit the ground running at launch.',
+      'After 20 years of waiting for a great MMORPG, is Ashes of Creation (AoC) it? It sure looks like it so far! We are currently in Alpha Two testing with a small core of our members who were able to get into Alpha One and Two.  Our plan is to continue testing and playing the game, building out knowledge and relationships so we are ready to hit the ground running at launch.',
     shape: bookmarkIcon
   }
 ]);
